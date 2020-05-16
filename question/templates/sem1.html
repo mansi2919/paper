@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+<head>
+</head>
+<body>
+  <h1>displaying pdfs of semester 1</h1>
+  <div class = 'dbms'>
+    <h1>DATABASE </h1>
+  {% for f in files %}
+  {% if f.subject == "DBMS" %}
+  <a href="{{   f.specifications.url }}">{{ f.specifications }}</a><br>
+
+{% endif %}
+  {% endfor %}
+  </div>
+  
+  <div class = 'dcna'>
+    <h1>COMMUNICATION</h1>
+  {% for f in files %}
+  {% if f.subject == "DCNA" %}
+  <a href="{{   f.specifications.url }}">{{ f.specifications }}</a><br>
+{% endif %}
+  {% endfor %}
+  </div>
+
+  </body>
+</html>
